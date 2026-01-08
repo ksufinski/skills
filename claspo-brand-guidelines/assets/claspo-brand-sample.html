@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Claspo Brand Style Guide - Sample Page</title>
+  <style>
+    :root {
+      --claspo-accent: #F3492C;
+      --claspo-accent-hover: #d93d22;
+      --claspo-accent-light: rgba(243, 73, 44, 0.1);
+      --claspo-neutral: #5F5F5F;
+      --claspo-neutral-light: #8A8A8A;
+      --claspo-neutral-dark: #3D3D3D;
+      --claspo-white: #FFFFFF;
+      --claspo-bg: #F5F5F5;
+      --claspo-border: #E0E0E0;
+
+      --size-16: 16px;
+      --size-20: 20px;
+      --size-24: 24px;
+      --size-27: 27px;
+      --size-32: 32px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--claspo-bg);
+      color: var(--claspo-neutral-dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* Header */
+    .header {
+      background: var(--claspo-white);
+      border-bottom: 1px solid var(--claspo-border);
+      padding: 20px 0;
+      margin-bottom: 40px;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--claspo-accent);
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--claspo-accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav a {
+      color: var(--claspo-neutral);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav a:hover {
+      color: var(--claspo-accent);
+    }
+
+    /* Section */
+    .section {
+      background: var(--claspo-white);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--claspo-neutral-dark);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--claspo-accent);
+      display: inline-block;
+    }
+
+    /* Color Palette */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+    }
+
+    .color-card {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--claspo-border);
+    }
+
+    .color-swatch {
+      height: 80px;
+    }
+
+    .color-info {
+      padding: 12px;
+      background: var(--claspo-white);
+    }
+
+    .color-name {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .color-hex {
+      font-size: 12px;
+      color: var(--claspo-neutral-light);
+      font-family: monospace;
+    }
+
+    /* Typography */
+    .typography-sample h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--claspo-neutral-dark);
+      margin-bottom: 16px;
+    }
+
+    .typography-sample h2 {
+      font-size: 36px;
+      font-weight: 600;
+      color: var(--claspo-neutral-dark);
+      margin-bottom: 16px;
+    }
+
+    .typography-sample h3 {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--claspo-neutral-dark);
+      margin-bottom: 16px;
+    }
+
+    .typography-sample h4 {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--claspo-neutral);
+      margin-bottom: 16px;
+    }
+
+    .typography-sample p {
+      font-size: 16px;
+      color: var(--claspo-neutral);
+      margin-bottom: 16px;
+      max-width: 600px;
+    }
+
+    .typography-sample .accent-text {
+      color: var(--claspo-accent);
+      font-weight: 600;
+    }
+
+    /* Buttons */
+    .button-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 2px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--claspo-accent);
+      color: var(--claspo-white);
+    }
+
+    .btn-primary:hover {
+      background: var(--claspo-accent-hover);
+    }
+
+    .btn-secondary {
+      background: var(--claspo-neutral);
+      color: var(--claspo-white);
+    }
+
+    .btn-secondary:hover {
+      background: var(--claspo-neutral-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: var(--claspo-accent);
+      color: var(--claspo-accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--claspo-accent-light);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--claspo-neutral);
+    }
+
+    .btn-ghost:hover {
+      background: var(--claspo-bg);
+      color: var(--claspo-accent);
+    }
+
+    .btn-sm {
+      padding: 8px 16px;
+      font-size: 12px;
+    }
+
+    .btn-lg {
+      padding: 16px 32px;
+      font-size: 16px;
+    }
+
+    /* Icons */
+    .icon-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: flex-end;
+    }
+
+    .icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: var(--claspo-bg);
+      color: var(--claspo-accent);
+    }
+
+    .icon svg {
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .icon-16 { width: 16px; height: 16px; padding: 4px; }
+    .icon-20 { width: 20px; height: 20px; padding: 5px; }
+    .icon-24 { width: 24px; height: 24px; padding: 6px; }
+    .icon-27 { width: 27px; height: 27px; padding: 7px; }
+    .icon-32 { width: 32px; height: 32px; padding: 8px; }
+
+    .icon-label {
+      font-size: 11px;
+      color: var(--claspo-neutral-light);
+    }
+
+    /* Form Elements */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--claspo-neutral-dark);
+    }
+
+    .form-input {
+      padding: 12px 16px;
+      border: 1px solid var(--claspo-border);
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--claspo-accent);
+      box-shadow: 0 0 0 3px var(--claspo-accent-light);
+    }
+
+    .form-input::placeholder {
+      color: var(--claspo-neutral-light);
+    }
+
+    .form-select {
+      padding: 12px 16px;
+      border: 1px solid var(--claspo-border);
+      border-radius: 8px;
+      font-size: 14px;
+      background: var(--claspo-white);
+      cursor: pointer;
+    }
+
+    .form-select:focus {
+      outline: none;
+      border-color: var(--claspo-accent);
+      box-shadow: 0 0 0 3px var(--claspo-accent-light);
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-checkbox {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--claspo-accent);
+      cursor: pointer;
+    }
+
+    /* Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--claspo-white);
+      border: 1px solid var(--claspo-border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .card-image {
+      height: 160px;
+      background: linear-gradient(135deg, var(--claspo-accent) 0%, var(--claspo-accent-hover) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--claspo-white);
+      font-size: 48px;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--claspo-neutral-dark);
+      margin-bottom: 8px;
+    }
+
+    .card-text {
+      font-size: 14px;
+      color: var(--claspo-neutral);
+      margin-bottom: 16px;
+    }
+
+    /* Badges */
+    .badge-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .badge-primary {
+      background: var(--claspo-accent);
+      color: var(--claspo-white);
+    }
+
+    .badge-secondary {
+      background: var(--claspo-neutral);
+      color: var(--claspo-white);
+    }
+
+    .badge-outline {
+      background: transparent;
+      border: 1px solid var(--claspo-accent);
+      color: var(--claspo-accent);
+    }
+
+    .badge-light {
+      background: var(--claspo-accent-light);
+      color: var(--claspo-accent);
+    }
+
+    /* Alerts */
+    .alert {
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .alert-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .alert-success {
+      background: rgba(72, 187, 120, 0.1);
+      border: 1px solid rgba(72, 187, 120, 0.3);
+      color: #2F855A;
+    }
+
+    .alert-warning {
+      background: rgba(237, 137, 54, 0.1);
+      border: 1px solid rgba(237, 137, 54, 0.3);
+      color: #C05621;
+    }
+
+    .alert-error {
+      background: var(--claspo-accent-light);
+      border: 1px solid rgba(243, 73, 44, 0.3);
+      color: var(--claspo-accent-hover);
+    }
+
+    .alert-info {
+      background: rgba(66, 153, 225, 0.1);
+      border: 1px solid rgba(66, 153, 225, 0.3);
+      color: #2B6CB0;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--claspo-neutral);
+      font-size: 14px;
+    }
+
+    .footer a {
+      color: var(--claspo-accent);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">
+        <div class="logo-icon">C</div>
+        Claspo
+      </div>
+      <nav class="nav">
+        <a href="#">Dashboard</a>
+        <a href="#">Widgets</a>
+        <a href="#">Analytics</a>
+        <a href="#">Settings</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Color Palette -->
+    <section class="section">
+      <h2 class="section-title">Color Palette</h2>
+      <div class="color-grid">
+        <div class="color-card">
+          <div class="color-swatch" style="background: var(--claspo-accent);"></div>
+          <div class="color-info">
+            <div class="color-name">Claspo Accent</div>
+            <div class="color-hex">#F3492C</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: var(--claspo-accent-hover);"></div>
+          <div class="color-info">
+            <div class="color-name">Accent Hover</div>
+            <div class="color-hex">#D93D22</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: var(--claspo-neutral-dark);"></div>
+          <div class="color-info">
+            <div class="color-name">Neutral Dark</div>
+            <div class="color-hex">#3D3D3D</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: var(--claspo-neutral);"></div>
+          <div class="color-info">
+            <div class="color-name">Neutral</div>
+            <div class="color-hex">#5F5F5F</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: var(--claspo-neutral-light);"></div>
+          <div class="color-info">
+            <div class="color-name">Neutral Light</div>
+            <div class="color-hex">#8A8A8A</div>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background: var(--claspo-bg);"></div>
+          <div class="color-info">
+            <div class="color-name">Background</div>
+            <div class="color-hex">#F5F5F5</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography -->
+    <section class="section">
+      <h2 class="section-title">Typography</h2>
+      <div class="typography-sample">
+        <h1>Heading 1 - Bold Statement</h1>
+        <h2>Heading 2 - Section Title</h2>
+        <h3>Heading 3 - Subsection</h3>
+        <h4>Heading 4 - Small Heading</h4>
+        <p>Body text for paragraphs and general content. The <span class="accent-text">Claspo brand</span> uses clean, modern typography with excellent readability across all platforms and devices.</p>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section class="section">
+      <h2 class="section-title">Buttons</h2>
+      <div class="button-grid" style="margin-bottom: 24px;">
+        <button class="btn btn-primary">Primary Button</button>
+        <button class="btn btn-secondary">Secondary Button</button>
+        <button class="btn btn-outline">Outline Button</button>
+        <button class="btn btn-ghost">Ghost Button</button>
+      </div>
+      <div class="button-grid">
+        <button class="btn btn-primary btn-sm">Small</button>
+        <button class="btn btn-primary">Default</button>
+        <button class="btn btn-primary btn-lg">Large</button>
+      </div>
+    </section>
+
+    <!-- Icon Sizes -->
+    <section class="section">
+      <h2 class="section-title">Icon Sizes</h2>
+      <div class="icon-grid">
+        <div class="icon-item">
+          <div class="icon icon-16">
+            <svg viewBox="0 0 24 24" width="100%" height="100%"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </div>
+          <span class="icon-label">16px</span>
+        </div>
+        <div class="icon-item">
+          <div class="icon icon-20">
+            <svg viewBox="0 0 24 24" width="100%" height="100%"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </div>
+          <span class="icon-label">20px</span>
+        </div>
+        <div class="icon-item">
+          <div class="icon icon-24">
+            <svg viewBox="0 0 24 24" width="100%" height="100%"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </div>
+          <span class="icon-label">24px</span>
+        </div>
+        <div class="icon-item">
+          <div class="icon icon-27">
+            <svg viewBox="0 0 24 24" width="100%" height="100%"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </div>
+          <span class="icon-label">27px</span>
+        </div>
+        <div class="icon-item">
+          <div class="icon icon-32">
+            <svg viewBox="0 0 24 24" width="100%" height="100%"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </div>
+          <span class="icon-label">32px</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sample Icons -->
+    <section class="section">
+      <h2 class="section-title">Sample Icons</h2>
+      <div class="icon-grid">
+        <div class="icon-item">
+          <div class="icon icon-24">
+            <svg viewBox="0 0 24 24" width="100%" height="100%"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+          </div>
+          <span class="icon-label">Refresh</span>
+        </div>
+        <div class="icon-item">
+          <div class="icon icon-24">
+            <svg viewBox="0 0 24 24" width="100%" height="100%"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          </div>
+          <span class="icon-label">Download</span>
+        </div>
+        <div class="icon-item">
+          <div class="icon icon-24">
+            <svg viewBox="0 0 24 24" width="100%" height="100%"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+          </div>
+          <span class="icon-label">Upload</span>
+        </div>
+        <div class="icon-item">
+          <div class="icon icon-24">
+            <svg viewBox="0 0 24 24" width="100%" height="100%"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </div>
+          <span class="icon-label">Minus</span>
+        </div>
+        <div class="icon-item">
+          <div class="icon icon-24">
+            <svg viewBox="0 0 24 24" width="100%" height="100%"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </div>
+          <span class="icon-label">Arrow Left</span>
+        </div>
+        <div class="icon-item">
+          <div class="icon icon-24">
+            <svg viewBox="0 0 24 24" width="100%" height="100%"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+          <span class="icon-label">Arrow Right</span>
+        </div>
+        <div class="icon-item">
+          <div class="icon icon-24">
+            <svg viewBox="0 0 24 24" width="100%" height="100%"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </div>
+          <span class="icon-label">Close</span>
+        </div>
+        <div class="icon-item">
+          <div class="icon icon-24">
+            <svg viewBox="0 0 24 24" width="100%" height="100%"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <span class="icon-label">Check</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form Elements -->
+    <section class="section">
+      <h2 class="section-title">Form Elements</h2>
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label">Text Input</label>
+          <input type="text" class="form-input" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Input</label>
+          <input type="email" class="form-input" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Select Dropdown</label>
+          <select class="form-select">
+            <option>Select an option</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Checkbox</label>
+          <div class="checkbox-group">
+            <input type="checkbox" class="form-checkbox" id="check1" checked>
+            <label for="check1">I agree to the terms</label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Badges -->
+    <section class="section">
+      <h2 class="section-title">Badges</h2>
+      <div class="badge-grid">
+        <span class="badge badge-primary">Primary</span>
+        <span class="badge badge-secondary">Secondary</span>
+        <span class="badge badge-outline">Outline</span>
+        <span class="badge badge-light">Light</span>
+      </div>
+    </section>
+
+    <!-- Alerts -->
+    <section class="section">
+      <h2 class="section-title">Alerts</h2>
+      <div class="alert alert-success">
+        <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        <span>Success! Your widget has been published.</span>
+      </div>
+      <div class="alert alert-warning">
+        <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span>Warning: Your trial expires in 3 days.</span>
+      </div>
+      <div class="alert alert-error">
+        <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+        <span>Error: Please check your input and try again.</span>
+      </div>
+      <div class="alert alert-info">
+        <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        <span>Info: New features are available in your dashboard.</span>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="section">
+      <h2 class="section-title">Cards</h2>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-image">📊</div>
+          <div class="card-body">
+            <h3 class="card-title">Analytics Dashboard</h3>
+            <p class="card-text">Track your widget performance with real-time analytics and insights.</p>
+            <button class="btn btn-primary btn-sm">View Details</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">🎨</div>
+          <div class="card-body">
+            <h3 class="card-title">Widget Builder</h3>
+            <p class="card-text">Create beautiful popups, forms, and on-site messaging widgets.</p>
+            <button class="btn btn-outline btn-sm">Learn More</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">⚡</div>
+          <div class="card-body">
+            <h3 class="card-title">Quick Setup</h3>
+            <p class="card-text">Get started in minutes with our easy-to-use widget templates.</p>
+            <button class="btn btn-secondary btn-sm">Get Started</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <p>Claspo Brand Style Guide</p>
+    <p style="margin-top: 8px; font-size: 12px; color: var(--claspo-neutral-light);">Generated from Figma Global Components</p>
+  </footer>
+</body>
+</html>
